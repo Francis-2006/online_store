@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Animation with Timed Vanish</title>
+  <style>
+    .container {
+      --uib-size: 45px;
+      --uib-color: black;
+      --uib-speed: 1.75s;
+      --uib-bg-opacity: 0.1;
+      height: 31.25px;
+      width: 50px;
+      transform-origin: center;
+      overflow: visible;
+      opacity: 0; /* Start hidden */
+      transform: translateY(20px); /* Start with offset for smooth animation */
+      transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade-in and movement */
+    }
+
+    .container.loaded {
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* Reset offset */
+    }
+
+    .container.hidden {
+      opacity: 0; /* Fade out */
+      transform: translateY(-20px); /* Move slightly up before disappearing */
+    }
+
+    .car {
+      stroke: var(--uib-color);
+      stroke-dasharray: 100;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      animation:
+        travel var(--uib-speed) ease-in-out infinite,
+        fade var(--uib-speed) ease-out infinite;
+      will-change: stroke-dasharray, stroke-dashoffset;
+      transition: stroke 0.5s ease;
+    }
+
+    .track {
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: var(--uib-color);
+      opacity: var(--uib-bg-opacity);
+    }
+
+    @keyframes travel {
+      0% {
+        stroke-dashoffset: 100;
+      }
+
+      75% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+
+      20%,
+      55% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg
+    class="container"
+    x="0px"
+    y="0px"
+    viewBox="0 0 50 31.25"
+    height="31.25"
+    width="50"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <path
+      class="track"
+      stroke-width="4"
+      fill="none"
+      pathlength="100"
+      d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
+    />
+    <path
+      class="car"
+      stroke-width="4"
+      fill="none"
+      pathlength="100"
+      d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
+    />
+  </svg>
+
+  <script>
+    // Wait for the page to load
+    window.addEventListener('load', () => {
+      const svgContainer = document.querySelector('.container');
+
+      // Step 1: Show the SVG
+      svgContainer.classList.add('loaded');
+
+      // Step 2: Set a timeout to hide the SVG after 5 seconds
+      setTimeout(() => {
+        svgContainer.classList.remove('loaded');
+        svgContainer.classList.add('hidden');
+      }, 5000); // 5000ms = 5 seconds
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Checkin Pizza</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255);
+            color: #333;
+        }
+        
+        header{
+            display: flex;
+            gap: 2rem;
+            height:4rem;
+            padding: 1rem;
+            /* justify-content: space-between; */
+            align-items: center;
+            margin-top: -8px;
+            margin-left: -8px;
+            width: 100%;
+            box-shadow: 0 0 10px grey;
+            border-radius: 5px;
+            padding: 2px;
+            /* position: absolute; */
+            position: fixed;
+            background-color: #ffffff;
+            
+
+            z-index: 3;
+        }
+        .logo{
+            padding: 18px;
+            margin-top: 14px;
+            margin-left: 2px;
+        }
+        ul{
+            margin-top: 3rem;
+            margin-left: -4.5rem;
+            box-shadow: 0 0 8px grey;
+            border-radius: 1rem;
+            padding: 2rem;
+            /* display:none; */
+            margin-top: -25rem;
+            position: absolute;
+            z-index: 4;
+            transition: 0.3s ease-in-out;
+            background-color: #ffffff;
+        }
+        .menuToggle{
+            margin-top: 2rem;
+            margin-left: -4.5rem;
+            position: absolute;
+
+            z-index: 12;
+        }
+        .firstName{
+            
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #1a3d5d;
+            font-size: 1.1rem;
+            font-style: bold;
+            font-weight: 14rem;
+        }
+       .menu{
+        margin-left: -2rem;
+       }
+       .cart{
+        margin-top: 20px;
+        margin-left: 1rem;
+        display: none;
+       }
+       
+        .fa-bars{
+            margin-left: 10rem;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+        .fa-bars:active{
+            scale: 0.7;
+        }
+
+        li{
+            list-style: none;
+            padding: 2px;
+            margin-bottom: 6px;
+        }
+        li a{
+            text-decoration: none;
+            color: black;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        }
+        li a:focus{
+            text-decoration: underline;
+        }
+       .banner {
+        text-align: center;
+        margin-top: 2rem;
+       }
+
+        /* About Section */
+        .about-content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #1a3d5d /* Light Orange */
+        }
+
+        .about-text {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .about-text p {
+            flex: 1 1 45%;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .about-image {
+            flex: 1 1 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 550px; /* Increased max-width for larger image */
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Our Story Section */
+        .story-section {
+            background-color: rgb(247, 246, 246); /* Light Orange */
+            color: #1a3d5d;
+            padding: 50px 20px;
+            /* border: 1px solid; */
+        }
+
+        .story-section h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .story-section p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        /* Footer */
+       
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffae42; /* Light Orange on hover */
+        }
+            
+footer{
+    text-align: center;
+    background: #1a3d5d;
+    color: white;
+    padding: 1rem;
+    /* border-radius: 1rem; */
+    margin-top: 1rem;
+    width:100%;
+    margin-left: -1rem;
+    margin-bottom: -10px;
+}
+
+
+
+
+        /* media responsiveness */
+        
+        @media(min-width:330px){
+.menu{
+    margin-left: -1rem;
+    
+}
+.menuToggle{
+    margin-left: 2rem;
+}
+.fa-bars{
+    margin-left: 7rem;
+}
+
+}
+@media(min-width:390px){
+    .menu{
+    margin-left: 1rem;
+}
+
+.menuToggle{
+    margin-left: 3rem;
+}
+.banner img{
+    width: 320px;
+}
+.about-text{
+    display: block;
+    flex-direction: column;
+}
+
+}
+@media(min-width:450px){
+    .menu{
+    margin-left: 4.7rem;
+    }
+    td{
+        padding: 7px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    td input::placeholder{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+}
+@media(min-width:500px){
+    .menu{
+    margin-left: 7rem;
+}
+.menuToggle{
+    margin-left: -2rem;
+}
+
+
+   }
+@media(min-width:550px){
+    .menu{
+    margin-left: 10rem;
+}
+}
+@media(min-width:600px){
+
+    .menu{
+    margin-left: 14rem;
+
+}
+
+.menuToggle{
+    margin-left: 2rem;
+}
+}
+@media(min-width:700px){
+    .menu{
+    margin-left: 15rem;
+}
+.logo{
+    margin-left: 3rem;
+}
+.banner img{
+    width: 450px;
+}
+.about-text{
+    display: flex;
+    flex-direction: row;
+    
+}
+.story-section p{
+    text-align: justify;
+    padding: 10px;
+}
+.about-content {
+    padding: 2rem;
+}
+.about-content img{
+    width: 28rem;
+}
+
+
+}
+@media(min-width:768px){
+    .menu{
+    margin-left: 15rem;
+}
+.cartBtn{
+margin-left: 4rem;
+
+}
+}
+@media(min-width:850px){
+    .menu{
+    margin-left: 23rem;
+}
+}
+@media(min-width:970px){        
+
+
+ul{
+    display: flex;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: -3.9rem;
+    margin-left: -18rem;
+}
+.logo{
+  margin-left: 8rem;
+}
+.cartBtn{
+  margin-right: 5rem;
+}
+.menuToggle{
+    margin-left: -7rem;
+    margin-top: none;
+  
+}
+table th{
+    padding: 1rem;
+}
+td{
+    padding: 1.4rem;
+}
+td input {
+    outline: none;
+}
+.fa-bars{
+    visibility: collapse;
+}
+li{
+    margin-left: 8px;
+}
+}
+@media (min-width:1000px){
+    .firstName{
+        font-family: 2.4rem;
+    
+}
+}
+
+
+
+@media(min-width:1200px){
+    ul{
+        margin-left: -17rem;
+    }
+    .firstName{
+        font-size: 1.8rem;
+    }
+    span.secondName{
+        font-size: 1.4rem;
+    }
+  
+}
+@media(min-width:1300px){
+    
+    #sec2,#sec3,#sec4{
+        box-shadow: none;
+    }
+    ul{
+        margin-left: -6rem;
+    }
+
+}
+@media(min-width:1400px){
+    #sec1{
+        width: 54rem;
+        box-shadow: none;
+    }
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+
+}
+
+@media(min-width:1500px){
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+
+}
+@media(min-width:1800px){
+
+    #sec1{
+        width: 62rem;
+        box-shadow: 0 0 5px;
+    }  
+}
+    
+    
+</style>
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.css">
+</head>
+<body>
+
+    <header>
+
+        <div class="logo">
+            <span class="firstName">🛒ASIMAV</span><span class="secondName"> VENT</span>
+        </div>
+
+        <div class="cart">
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+
+        <div class="menu">
+
+            <i class="fa fa-bars"></i>
+            <ul class="menulist">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./menu.html">MENU</a></li>
+            <li><a href="./about.html" style="text-decoration: 3px underline  #1a3d5d">ABOUT US</a></li>
+            <li><a href="./cart.html">CART </a></li>
+            <li><a href="./contact.html">CONTACT </a></li>
+           
+               
+            </ul>
+
+
+        </div>
+
+
+
+
+
+
+    </header><br><br>
+
+  
+    </section>
+<div class="banner">
+    <img src="./depositphotos_67451645-stock-photo-people-hands-holding-red-word.webp" alt="">
+</div>
+    <!-- About Us Section -->
+    <section class="about-content">
+        <h2>Who We Are</h2>
+        <div class="about-text">
+            <p>
+                At Asimav Vent, we are dedicated to becoming one of the best online stores in Ghana. We offer a wide range of quality products designed to meet your everyday needs with ease and convenience.
+
+                Serving the citizens of Ghana, our goal is to deliver exceptional value and reliable service, making online shopping simple and enjoyable.
+                
+                Asimav Vent – Your trusted choice for all your shopping needs.
+            </p>
+            <div class="about-image">
+                <img src="./asset/istockphoto-1249219777-612x612.jpg" alt="Pizza Making Process">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <h2>Our Story</h2>
+        <p>
+            Asimav Vent was founded with a vision to make shopping easier and more accessible for everyone in Ghana. What began as a small initiative to provide quality products has grown into a trusted online store serving customers across the country.
+
+With a commitment to convenience and excellence, we continue to evolve, bringing a wide range of products to meet the diverse needs of our customers. Our journey is driven by passion, innovation, and the trust of our community.
+
+Asimav Vent – From humble beginnings to becoming your go-to online store.
+            </p>
+    </section>
+
+   
+
+    <footer>
+        <h4>Follow us</h4>
+            <div class="icons">
+                <i class=" fab fa-facebook"></i>
+                <i class=" fab fa-instagram"></i>
+                <i class=" fab fa-twitter"></i>
+            </div>
+    </footer>
+
+</body>
+</html>
+<script>
+       //toggling menu bar
+ let bars =document.querySelector('.fa-bars');
+ let menu = document.querySelector('.menulist');
+
+ bars.addEventListener('click',(e)=>{
+
+    menu.classList.toggle("menuToggle");
+
+ })
+</script>
+

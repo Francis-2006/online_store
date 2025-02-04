@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.css">
+    <title>CheckOut Page</title>
+
+    <style>
+        body{
+            z-index: 1;
+        }
+        header{
+            display: flex;
+            gap: 7rem;
+            height:3rem;
+            margin-top: -8px;
+            margin-left: -8px;
+            width: 100%;
+            box-shadow: 0 0 10px grey;
+            border-radius: 5px;
+            padding: 2px;
+            /* position: absolute; */
+            position: fixed;
+            background-color: #ffffff;
+            
+
+            z-index: 3;
+        }
+        .logo{
+            padding: 3px;
+            margin-top: 14px;
+            margin-left: 2px;
+        }
+        ul{
+            margin-top: 3rem;
+            margin-left: -4.5rem;
+            box-shadow: 0 0 8px grey;
+            border-radius: 1rem;
+            padding: 2rem;
+            /* display:none; */
+            margin-top: -25rem;
+            position: absolute;
+            z-index: 4;
+            transition: 0.3s ease-in-out;
+            background-color: #ffffff;
+        }
+        .menuToggle{
+            margin-top: 2rem;
+            margin-left: -4.5rem;
+            position: absolute;
+
+            z-index: 12;
+        }
+        .firstName{
+            
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: red;
+            font-size: 1.1rem;
+            font-style: bold;
+            font-weight: 14rem;
+        }
+       .menu{
+        margin-left: -2rem;
+       }
+       .cart{
+        margin-top: 20px;
+        margin-left: 1rem;
+       }
+       
+        .fa-bars{
+            margin-left: 4rem;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+        .fa-bars:active{
+            scale: 0.7;
+        }
+
+        li{
+            list-style: none;
+            padding: 2px;
+            margin-bottom: 6px;
+        }
+        li a{
+            text-decoration: none;
+            color: black;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        }
+        li a:focus{
+            text-decoration: underline;
+        }
+        input{
+            background-color: rgb(243, 239, 239);
+            border: none;
+            margin: 0.7rem;
+            padding: 4px;
+            outline: none;
+            border-radius: 5px;
+
+        }
+        #sec1{
+            /* border:1px solid black; */
+            margin-top: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px grey;
+            /* position: absolute; */
+            padding: 1.3rem;
+            /* grid-area: sec1; */
+        }
+        #sec2{
+            /* border: 1px solid ; */
+            padding: 1rem;
+            margin-top: 10px;
+            box-shadow: 0 0 10px grey;
+            border-radius: 5px;
+            /* grid-area: sec2; */
+        }
+        #sec2 h2{
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        #sec2 p{
+            font-size: 1.rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #sec2 textarea{
+            width: 15rem;
+            height: 5rem;
+            border: none;
+            background:rgb(243, 240, 240) ;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #sec3{
+            /* border: 1px solid ; */
+            padding: 1rem;
+            margin-top: 10px;
+            box-shadow: 0 0 10px grey;
+            border-radius: 5px;
+            /* grid-area: sec3; */
+        }
+        #sec4{
+            /* border: 1px solid ; */
+            padding: 1rem;
+            margin-top: 10px;
+            box-shadow: 0 0 10px grey;
+            border-radius: 5px;
+            /* grid-area: sec4; */
+        }
+        button{
+            margin: 3rem;
+            padding:10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border:none;
+            background: green;
+            color: white;
+        }
+        
+footer{
+    text-align: center;
+    background: #000000;
+    color: white;
+    padding: 1rem;
+    /* border-radius: 1rem; */
+    margin-top: 1rem;
+    width:100%;
+    margin-left: -1rem;
+    margin-bottom: -10px;
+}
+table{
+    border-collapse: collapse;
+    padding: 2rem;
+    text-align: center;
+}
+th{
+    padding: 0rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+td{
+    padding: 0rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+}
+.total{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.3rem;
+}
+
+
+
+        /* media responsiveness */
+        
+    @media(min-width:330px){
+.menu{
+    margin-left: -1rem;
+}
+
+}
+@media(min-width:390px){
+    .menu{
+    margin-left: 2rem;
+}
+#sec1,#sec2,#sec3,#sec4{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+}
+@media(min-width:450px){
+    .menu{
+    margin-left: 4.7rem;
+}
+#sec1,#sec2,#sec3,#sec4{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 2rem;
+}
+}
+@media(min-width:500px){
+    .menu{
+    margin-left: 7rem;
+}
+.menuToggle{
+    margin-left: -2rem;
+}
+
+
+   }
+@media(min-width:550px){
+    .menu{
+    margin-left: 9rem;
+}
+}
+@media(min-width:600px){
+
+    .menu{
+    margin-left: 11rem;
+
+}
+#sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+}
+@media(min-width:700px){
+    .menu{
+    margin-left: 16rem;
+}
+.logo{
+    margin-left: 3rem;
+}
+#sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+
+
+}
+@media(min-width:768px){
+    .menu{
+    margin-left: 20rem;
+}
+
+}
+@media(min-width:850px){
+}
+@media(min-width:970px){        
+
+#overall{
+    display: grid;
+    grid: auto/auto auto;
+    grid-gap: 15px;
+}
+#sec1{
+    width: 29rem;
+}
+#sec2,#sec4{
+    margin-left: -2rem;
+    margin-right: 4.2rem;
+    margin-top: 17px;
+}
+ul{
+    display: flex;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: -3.4rem;
+    margin-left: -12rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menuToggle{
+    margin-left: -7rem;
+    margin-top: none;
+  
+}
+.fa-bars{
+    visibility: collapse;
+}
+li{
+    margin-left: 8px;
+}
+}
+@media (min-width:1000px){
+    .firstName{
+        font-family: 2.4rem;
+    }
+    .fa-shopping-cart{
+        font-size: 1.4rem;
+        margin-left: 3rem;
+    }
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+}
+
+
+
+@media(min-width:1200px){
+    ul{
+        margin-left: -6rem;
+    }
+    .firstName{
+        font-size: 1.8rem;
+    }
+    span.secondName{
+        font-size: 1.4rem;
+    }
+    #sec1{
+        width: 40rem;
+        box-shadow: 0 0 5px;
+    }
+    input{
+        padding:10px;
+    }
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+}
+@media(min-width:1300px){
+    
+    #sec2,#sec3,#sec4{
+        box-shadow: none;
+    }
+
+}
+@media(min-width:1400px){
+    #sec1{
+        width: 54rem;
+        box-shadow: none;
+    }
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+}
+
+@media(min-width:1500px){
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+
+}
+@media(min-width:1800px){
+
+    #sec1{
+        width: 62rem;
+        box-shadow: 0 0 5px;
+    }  
+}
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="logo">
+            <span class="firstName">ASIMAV</span><span class="secondName"> VENT</span>
+        </div>
+<!-- 
+        <div class="cart">
+            <i class="fa fa-shopping-cart"></i>
+        </div> -->
+
+        <div class="menu">
+
+            <i class="fa fa-bars"></i>
+            <ul class="menulist">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./menu.html">MENU</a></li>
+            <li><a href="./about.html">ABOUT US</a></li>
+            <li><a href="./contact.html">CONTACT </a></li>
+            <li><a href="./order.html">ORDER NOW </a></li>
+            <li><a href="./gallery.html">GALLERY </a></li>
+               
+            </ul>
+
+
+        </div>
+
+
+
+
+
+
+    </header><br><br>
+
+<section id="overall">
+    <section id="sec1">
+        <h1>Billing details</h1>
+        <form action="" id="form">
+           
+
+            <div class="name-div">
+               
+                <input type="text" placeholder="First name" class="firstname" required>
+                <input type="text" placeholder="Last  name" class="secondname" required>
+            </div>
+
+            <input type="text" placeholder="House number and Street name" class="address" required>
+            <input type="text" placeholder="Town/City" class="city" required><br><br>
+            
+            <div class="region">
+                <label for="">Choose region</label>
+                <select name="" id="selectRegion">
+                    <option value="">Select region</option>
+                    <option value="western">Western</option>
+                    <option value="eastern">Eastern</option>
+                    <option value="central">Central</option>
+                    <option value="Greater">Greater Accra</option>
+                    <option value="northern">Northern</option>
+                    <option value="northeast">North East</option>
+                    <option value="oti">Oti</option>
+                    <option value="savannah">Savannah</option>
+                    <option value="uppereast">Upper East</option>
+                    <option value="volta">Volta</option>
+                    <option value="westernnorth">Western North</option>
+                </select><br><br>
+            </div>
+
+            <input type="tel" placeholder="Phone" class="tel" required>
+            <input type="email" placeholder="Email" class="email" required>
+
+
+        
+    </section>
+
+    <section id="sec2">
+        <h2>Additional information</h2>
+
+        <p>Order notes(optional)</p>
+        <textarea name="" id="add-info" placeholder="Notes about your order, e.g special notes for delivery."></textarea>
+    </section>
+
+    <section id="sec3">
+        <h3>Delivery Type</h3>
+
+        <div class="deliveryOpt">
+           <label for="">Select your Delivery Mode</label>
+           <select name="" id="deliveryMode">
+            <option value="">Select</option>
+            <option value="delivery">Delivery</option>
+            <option value="Pick By Me">Pick by Me</option>
+           </select>
+        </div>
+    </section>
+
+    <section id="sec4">
+
+        <h2>Your Order</h2>
+<table border="1">
+    <tr>
+        
+        <th>Image</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+       
+        
+    </tr>
+
+    <tbody class="tbody"></tbody>
+</table>
+
+<h4 class="total"></h4>
+
+<button type="submit" id="order-btn">Place Your Order</button>
+
+
+    </section>
+</form>
+
+
+<button type="submit"  id="pay">pay</button>
+
+
+</section>
+
+<footer>
+    <h4>Follow us</h4>
+        <div class="icons">
+            <i class=" fab fa-facebook"></i>
+            <i class=" fab fa-instagram"></i>
+            <i class=" fab fa-twitter"></i>
+        </div>
+</footer>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="./checkout.js"></script>
+</body>
+</html>

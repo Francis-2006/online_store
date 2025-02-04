@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIMAV HOME</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #1a3d5d; Light Background */
+           background-color: #ffffff(255, 255, 255);
+        }
+        header{
+            display: flex;
+            gap: 2rem;
+            height:4rem;
+            padding: 1rem;
+            /* justify-content: space-between; */
+            align-items: center;
+            margin-top: -8px;
+            margin-left: -8px;
+            width: 100%;
+            box-shadow: 0 0 10px grey;
+            border-radius: 5px;
+            padding: 2px;
+            /* position: absolute; */
+            position: fixed;
+            background-color: #ffffff;
+            
+
+            z-index: 3;
+        }
+        .logo{
+            padding: 18px;
+            margin-top: 14px;
+            margin-left: 2px;
+        }
+        ul{
+            margin-top: 3rem;
+            margin-left: -4.5rem;
+            box-shadow: 0 0 8px grey;
+            border-radius: 1rem;
+            padding: 2rem;
+            /* display:none; */
+            margin-top: -25rem;
+            position: absolute;
+            z-index: 4;
+            transition: 0.3s ease-in-out;
+            background-color: #ffffff;
+        }
+        .menuToggle{
+            margin-top: 2rem;
+            margin-left: -4.5rem;
+            position: absolute;
+
+            z-index: 12;
+        }
+        .firstName{
+            
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: ;
+            font-size: 1.1rem;
+            font-style: bold;
+            font-weight: 14rem;
+        }
+       .menu{
+        margin-left: -2rem;
+       }
+       .cart{
+        margin-top: 20px;
+        margin-left: 1rem;
+        display: none;
+       }
+       
+        .fa-bars{
+            margin-left: 5rem;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+        .fa-bars:active{
+            scale: 0.7;
+        }
+
+        li{
+            list-style: none;
+            padding: 2px;
+            margin-bottom: 6px;
+        }
+        li a{
+            text-decoration: none;
+            color: black;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        }
+        li a:focus{
+            text-decoration: underline;
+        }
+       .banner-name{
+        text-align: center;
+        margin-top: 3rem;
+
+    
+       }
+       .banner-name h2{
+        font-size: 5rem;
+        color:#1a3d5d;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+       }
+       .banner-name p{
+        font-size: 1.2rem;
+       }
+       .banner-name button{
+        background: green;
+        width: 5rem;
+        height: 30px;
+        color: white;
+        border: none;
+        border-radius: 7px;
+       }
+       .main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+       .main img{
+        width: 32rem;
+        height: 30rem;
+       }
+      
+        /* Menu Section */
+        .menu-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .menu-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .add-to-cart {
+            background-color: #ffae42;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #e68a00; /* Darker Light Orange */
+        }
+
+        /* Cart Section */
+        .cart-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .cart-total {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a3d5d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+            margin-left: 30px;
+            width: 100%;
+            text-align: center;
+            /* display: none; */
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .social-links a {
+            font-weight: bold; /* Make text bold */
+            text-decoration: none; /* Optional: remove underline */
+            color: white;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline; /* Optional: underline on hover */
+        }
+        
+.explore{
+    text-align: center;
+    margin-top: 2rem;
+    margin: 1rem;
+
+}
+.explore h1{
+    font-size: 2rem;
+}
+.hot{
+    font-size: 2.5rem;
+    color: #ff8000;
+    font-family: arial;
+    font-weight: 800;
+
+}
+.explore img{
+    width: 13rem;
+    border-radius: 1rem;
+}
+.explore figcaption{
+    /* width: 20rem; */
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    /* background: grey; */
+}
+.explore .items div{
+    text-align: center;
+    background: #f3f3f5;
+    /* box-shadow: 0 0 10px; */
+    
+
+}
+.items{
+    display: flex;
+    overflow-x: scroll;
+    gap: 2rem;
+    scroll-behavior: smooth;
+    height: 22rem;
+    /* padding: 0.3rem; */
+}
+.items::-webkit-scrollbar{
+    display: none;
+}
+
+.items div figcaption h2{
+    font-size: 1.35rem;
+    margin: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.items div figcaption p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+}
+.ratings{
+    display: grid;
+    grid: auto/auto auto auto auto auto;
+    padding: 2rem;
+}
+.ratings div{
+    text-align: center;
+    margin:1rem;
+
+}
+.ratings h2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    margin: 1rem;
+    font-size: 3rem;
+
+}
+.ratings p{
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.con{
+    display: flex;
+    text-align: justify;
+    margin-top: 2rem;
+}
+.contact{
+    border: 1px solid grey;
+    padding: 2rem;
+    width: 80%;
+    height:2rem;
+    margin: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.con i{
+    border: 1px solid #1a3d5d;
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    margin-right:1rem ;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 2rem;
+}
+span h3{
+    font-size: 1.2rem;
+   margin-top: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+span p{
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: -8px;
+}
+     
+
+
+
+        
+        /* media responsiveness */
+        
+        @media(min-width:330px){
+.menu{
+    margin-left: -1rem;
+    
+}
+.menuToggle{
+    margin-left: -2rem;
+}
+}
+@media(min-width:390px){
+  
+    .menu{
+    margin-left: 2rem;
+}
+.fa-bars{
+    margin-left: 6rem;
+    font-size: 1.7rem;
+}
+
+.menuToggle{
+    margin-left: 2rem;
+}
+}
+@media(min-width:450px){
+    .menu{
+    margin-left: 4.7rem;
+    }
+   
+    footer{
+        margin-left: -10px;
+    }
+}
+@media(min-width:500px){
+    .menu{
+    margin-left: 7rem;
+}
+.fa-bars{
+    margin-left: 4rem;
+}
+.menuToggle{
+    margin-left: -2rem;
+}
+
+
+   }
+@media(min-width:550px){
+    .menu{
+    margin-left: 13rem;
+}
+}
+@media(min-width:600px){
+
+    .menu{
+    margin-left: 18rem;
+
+}
+
+}
+@media(min-width:700px){
+    .menu{
+    margin-left: 19rem;
+}
+.fa-bars{
+    margin-left: 1rem;
+}
+.logo{
+    margin-left: 3rem;
+}
+
+
+
+}
+@media(min-width:768px){
+    .menu{
+    margin-left: 25rem;
+}
+
+}
+@media(min-width:850px){
+    .menu{
+    margin-left: 30rem;
+}
+}
+@media(min-width:970px){        
+
+
+ul{
+    display: flex;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: -3.4rem;
+    margin-left: -23rem;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+.menuToggle{
+    margin-left: -7rem;
+    margin-top: none;
+  
+}
+.fa-bars{
+    visibility: collapse;
+}
+li{
+    margin-left: 8px;
+}
+}
+@media (min-width:1000px){
+    .firstName{
+        font-family: 2.4rem;
+    }
+}
+
+
+
+@media(min-width:1200px){
+    ul{
+        margin-left: -6rem;
+    }
+    .firstName{
+        font-size: 1.8rem;
+    }
+    span.secondName{
+        font-size: 1.4rem;
+    }
+   
+}
+@media(min-width:1300px){
+    
+  
+
+}
+@media(min-width:1400px){
+  
+}
+
+@media(min-width:1500px){
+ 
+}
+@media(min-width:1800px){
+
+}
+
+/* second media query */
+
+
+
+@media(max-width:1069px){
+   .ratings{
+    grid:auto/auto auto
+   }
+   .contact{
+    display: block;
+    margin-bottom: 2rem;
+    height: 20rem;
+   }
+   footer{
+    width: 100%;
+   }
+}
+
+@media(max-width:901px){
+    .banner-name{
+        margin-left: 7rem;
+    }
+}
+@media(max-width:788px){
+    .banner-name{
+        margin-left: 15rem;
+    }
+}
+@media(max-width:794px){
+   .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   }
+   .banner-name{
+    margin-left: -1rem;
+   }
+   .main img{
+    margin-left: 12rem;
+   }
+}
+@media(max-width:648px){
+.banner-name{
+    text-align: center;
+}
+.banner-name h2{
+    font-size: 2rem;
+}
+
+}
+@media(max-width:490px){
+.main img{
+    margin-left: -3rem;
+}
+
+
+}
+@media(max-width:410px){
+.main img{
+    margin-left: -3rem;
+    scale: 0.7;
+}
+.explore img{
+    scale: 0.7;
+}
+.banner-name{
+    padding-left: 30px;
+}
+.contact{
+    scale: 0.86;
+}
+.ratings{
+    scale: 0.78;
+}
+
+}
+@media(max-width:380px){
+    .contact{
+        scale: 0.7;
+        margin-left: -0.5rem;
+        margin-top: -3rem;
+    }
+}
+
+    </style>
+   
+    
+</head>
+<body>
+
+   
+
+    
+    <header>
+
+        <div class="logo">
+            <span class="firstName">🛒ASIMAV</span><span class="secondName"> VENT</span>
+        </div>
+
+        <div class="cart">
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+
+        <div class="menu">
+
+            <i class="fa fa-bars"></i>
+            <ul class="menulist">
+            <li><a href="./index.html" style="text-decoration: 3px underline #1a3d5d ">HOME</a></li>
+            <li><a href="./menu.html">MENU</a></li>
+            <li><a href="./about.html">ABOUT US</a></li>
+            <li><a href="./contact.html">CONTACT </a></li>
+           
+               
+            </ul>
+
+
+        </div>
+
+
+
+
+
+
+    </header><br><br>
+
+<!-- banner -->
+ <section class="main">
+    <div class="banner-name">
+        <h2>ASIMAV VENT</h2>
+        <p> Your trusted choice for all your shopping needs.</p>
+        <a href="./menu.html"><button>Shop now</button></a>
+    </div>
+    <img src="./asset/ei_1717506491805-removebg-preview.png" alt="">
+</section>
+
+
+<div class="explore">
+    <h1>EXPLORE <span class="hot"> HOT </span>PRODUCT</h1>
+        <div class="items">
+            
+                <div class="item">
+                    <img src="./asset/1 (9).jpg" alt="">
+                    <figcaption>
+                        <h2>Itel Cell</h2>
+                        <p>20% </p>
+                    </figcaption>
+                </div>
+
+                <div class="item">
+                    <img src="./asset/1 (39).jpg" alt="">
+                    <figcaption>
+                        <h2>Electric Kettle</h2>
+                        <p>23%</p>
+                    </figcaption>
+                </div>
+               
+
+                <div class="item">
+                    <img src="./asset/1 (46).jpg" alt="">
+                    <figcaption>
+                        <h2>Round Neck</h2>
+                        <p>23% </p>
+                    </figcaption>
+                </div>
+               
+               
+
+                <div class="item">
+                    <img src="./asset/1 (62).jpg" alt="">
+                    <figcaption>
+                        <h2>Feminine Sexy Wear</h2>
+                        <p>5%</p>
+                    </figcaption>
+                </div>
+               
+
+                <div class="item">
+                    <img src="./asset/1 (51).jpg" alt="">
+                    <figcaption>
+                        <h2>Nike Sneakers</h2>
+                        <p>10% </p>
+                    </figcaption>
+                </div>
+
+                <div class="item">
+                    <img src="./asset/1 (48).jpg" alt="">
+                    <figcaption>
+                        <h2>Men Summer</h2>
+                        <p>25%
+                        </p>
+                    </figcaption>
+                </div>
+               
+
+                <div class="item">
+                    <img src="./asset/1 (54).jpg" alt="">
+                    <figcaption>
+                        <h2>Desert</h2>
+                        <p>10%.
+                        </p>
+                        </figcaption>
+                </div>
+
+                <div class="items">
+                    <img src="./asset/1 (57).jpg" alt="">
+                    <figcaption>
+                        <h2>Men Casual</h2>
+                        <p>20%
+                        </p>
+                        </figcaption>
+                </div>
+               
+
+                <div class="item">
+                    <img src="./asset/1 (5).jpg" alt="">
+                    <figcaption>
+                        <h2>Hikers Bag</h2>
+                        <p>20%
+                        </p>
+                        </figcaption>
+                </div>
+
+                <div class="item">
+                <img src="./asset/1 (16).jpg" alt="">
+                    <figcaption>
+                        <h2>Smart LED TV</h2>
+                        <p>35%
+                        </p>
+                        </figcaption>
+                </div>
+               
+
+               
+               
+        </div>
+</div>
+
+
+<div class="ratings">
+            
+    <div class="stock">
+        <h2>1000+</h2>
+        <p>Product Sold</p>
+    </div>
+
+    <div class="stock">
+        <h2>10+</h2>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stock">
+        <h2>100%</h2>
+        <p>Customer Satisfaction</p>
+    </div>
+
+    <div class="stock">
+        <h2>8K+</h2>
+        <p>Happy Clients</p>
+    </div>
+
+    <div class="stock">
+        <h2>5000+</h2>
+        <p>Goods</p>
+    </div>
+</div>
+
+<div class="contact">
+
+    <div class="con">
+        <i class="fab fa-whatsapp"></i>
+
+        <span>
+            <h3>whatsapp No.</h3>
+            <p>O592904837</p>
+        </span>
+     </div>   
+
+    <div class="con">
+        <i class="fa fa-envelope"></i>
+
+        <span>
+            <h3>Write to us</h3>
+            <p>francisaasiedu247@gmail.com</p>
+        </span>
+    
+
+    </div>
+
+    <div class="con">
+        <i class="fa fa-location"></i>
+
+        <span>
+            <h3>Address</h3>
+            <p>Takoradi,Ghana</p>
+        </span>
+    
+
+    </div>
+
+</div>
+
+   
+
+<footer class="footer">
+    <h4>Follow us</h4>
+        <div class="icons">
+            <i class=" fab fa-facebook"></i>
+            <i class=" fab fa-instagram"></i>
+            <i class=" fab fa-twitter"></i>
+        </div><br><br>
+        <p>©Copyright 2025 Frantech</p>
+        <p>Private Policy</p>
+</footer>
+<marquee behavior="smooth" direction=""> <p> Your trusted choice for all your shopping needs.</p></marquee>
+
+
+
+    <script>
+        
+         //toggling menu bar
+ let bars =document.querySelector('.fa-bars');
+ let menu = document.querySelector('.menulist');
+
+ bars.addEventListener('click',(e)=>{
+
+    menu.classList.toggle("menuToggle");
+
+ })
+ 
+
+        // Cart Functionality
+        let cart = [];
+
+        // Function to add items to the cart
+        function addToCart(name, price) {
+            cart.push({name: name, price: price});
+            updateCartDisplay();
+        }
+
+        // Function to remove items from the cart
+        function removeFromCart(index) {
+            cart.splice(index, 1); // Remove item by index
+            updateCartDisplay();
+        }
+
+        // Function to update the cart display
+        function updateCartDisplay() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.innerHTML = ''; // Clear the current cart
+
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    ${item.name} - GHS ${item.price} 
+                    <button class="remove-from-cart" onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                total += item.price;
+            });
+
+            document.querySelector('.cart-total').textContent = `Total: GHS ${total.toFixed(2)}`;
+        }
+
+        // Event listeners for all "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const itemName = this.getAttribute('data-name');
+                const itemPrice = parseFloat(this.getAttribute('data-price'));
+
+                addToCart(itemName, itemPrice);
+            });
+        });
+
+        // Checkout Functionality
+        document.getElementById('checkoutButton').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add items before checking out.');
+            } else {
+                // Create order message
+                let orderMessage = 'New Order:\n';
+                cart.forEach(item => {
+                    orderMessage += `${item.name} - GHS ${item.price}\n`;
+                });
+                orderMessage += `Total: GHS ${cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)}`;
+                
+                // Encode the message for URL
+                const encodedMessage = encodeURIComponent(orderMessage);
+                
+                // Redirect to WhatsApp with order message
+                window.location.href = `https://wa.me/233557398858?text=${encodedMessage}`; // Replace with your WhatsApp number
+            }
+        });
+    </script>
+</body>
+</html>

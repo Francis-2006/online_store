@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Checkin Pizza</title>
+    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff(to right, #f2f2f2, #e6f7ff); /* Gradient Background */
+            color: #333;
+        }
+        
+        header{
+            display: flex;
+            gap: 2rem;
+            height:4rem;
+            padding: 1rem;
+            /* justify-content: space-between; */
+            align-items: center;
+            margin-top: -8px;
+            margin-left: -8px;
+            width: 100%;
+            box-shadow: 0 0 10px grey;
+            border-radius: 5px;
+            padding: 2px;
+            /* position: absolute; */
+            position: fixed;
+            background-color: #ffffff;
+            
+
+            z-index: 3;
+        }
+        .logo{
+            padding: 18px;
+            margin-top: 14px;
+            margin-left: 2px;
+        }
+        ul{
+            margin-top: 3rem;
+            margin-left: -4.5rem;
+            box-shadow: 0 0 8px grey;
+            border-radius: 1rem;
+            padding: 2rem;
+            /* display:none; */
+            margin-top: -25rem;
+            position: absolute;
+            z-index: 4;
+            transition: 0.3s ease-in-out;
+            background-color: #ffffff;
+        }
+        .menuToggle{
+            margin-top: 2rem;
+            margin-left: -2.5rem;
+            position: absolute;
+
+            z-index: 12;
+        }
+        .firstName{
+            
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #1a3d5d;
+             /* background:  #1a3d5d; */
+            font-size: 1.1rem;
+            font-style: bold;
+            font-weight: 14rem;
+        }
+       .menu{
+        margin-left: -2rem;
+       }
+       .cart{
+        margin-top: 20px;
+        margin-left: 1rem;
+        display: none;
+       }
+       
+        .fa-bars{
+            margin-left: 6rem;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+        .fa-bars:active{
+            scale: 0.7;
+        }
+
+        li{
+            list-style: none;
+            padding: 2px;
+            margin-bottom: 6px;
+        }
+        li a{
+            text-decoration: none;
+            color: black;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        }
+        li a:focus{
+            text-decoration: underline;
+        }
+
+       
+        /* Contact Page Container */
+        .contact-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .contact-container h1 {
+            text-align: center;
+            color:  #1a3d5d; /* Orangered */
+            font-size: 36px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-info div {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-info div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info div h3 {
+            color:  #1a3d5d;
+        }
+
+        .contact-info div a {
+            text-decoration: none;
+            color: #004d4d;
+            font-weight: bold;
+        }
+
+        .contact-info div a:hover {
+            color: #ff4500;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-form form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: border 0.3s ease-in-out;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #ff4500;
+        }
+
+        .contact-form button {
+            background-color: rgb(9, 151, 9);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: darkcyan;
+            transform: translateY(-3px);
+        }
+
+        /* Social Links */
+        .social-links {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            color:  #1a3d5d;
+            font-size: 30px;
+            transition: color 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: darkcyan;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+       
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        footer {
+            background-color: #1a3d5d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+            margin-left: 30px;
+            width: 100%;
+        }
+
+        
+        
+        /* media responsiveness */
+        
+        @media(min-width:330px){
+.menu{
+    margin-left: -1rem;
+    
+}
+.menuToggle{
+    margin-left: -2rem;
+}
+
+}
+@media(min-width:390px){
+    .menu{
+    margin-left: 2rem;
+}
+.fa-bars{
+    margin-left: 6rem;
+    font-size: 1.7rem;
+}
+
+.menuToggle{
+    margin-left: -1rem;
+}
+}
+@media(min-width:450px){
+    .menu{
+    margin-left: 3rem;
+    }
+   
+    footer{
+        margin-left: -10px;
+    }
+}
+@media(min-width:500px){
+    .menu{
+    margin-left: 7rem;
+}
+.fa-bars{
+    margin-left: 4rem;
+}
+.menuToggle{
+    margin-left: -2rem;
+}
+
+
+   }
+@media(min-width:550px){
+    .menu{
+    margin-left: 10rem;
+}
+}
+@media(min-width:600px){
+
+    .menu{
+    margin-left: 13rem;
+
+}
+
+}
+@media(min-width:700px){
+    .menu{
+    margin-left: 15rem;
+}
+.fa-bars{
+    margin-left: 1rem;
+}
+.logo{
+    margin-left: 3rem;
+}
+
+
+
+}
+@media(min-width:768px){
+    .menu{
+    margin-left: 18rem;
+}
+
+}
+@media(min-width:850px){
+    .menu{
+    margin-left: 25rem;
+}
+}
+@media(min-width:970px){        
+
+
+ul{
+    display: flex;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: -3.4rem;
+    margin-left: -23rem;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+.menuToggle{
+    margin-left: -7rem;
+    margin-top: none;
+  
+}
+.fa-bars{
+    visibility: collapse;
+}
+li{
+    margin-left: 8px;
+}
+}
+@media (min-width:1000px){
+    .firstName{
+        font-family: 2.4rem;
+    }
+}
+
+
+
+@media(min-width:1200px){
+    ul{
+        margin-left: -6rem;
+    }
+    .firstName{
+        font-size: 1.8rem;
+    }
+    span.secondName{
+        font-size: 1.4rem;
+    }
+   
+}
+@media(min-width:1300px){
+    
+  
+    ul{
+        margin-left: -4rem;
+    }
+}
+@media(min-width:1400px){
+  
+}
+
+@media(min-width:1500px){
+ 
+}
+@media(min-width:1800px){
+
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <div class="logo">
+            <span class="firstName"></span>🛒ASIMAV<span class="secondName"> VENT</span>
+        </div>
+
+        <div class="cart">
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+
+        <div class="menu">
+
+            <i class="fa fa-bars"></i>
+            <ul class="menulist">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./menu.html">MENU</a></li>
+            <li><a href="./about.html">ABOUT US</a></li>
+            <li><a href="./cart.html">CART</a></li>
+            <li><a href="./contact.html" style="text-decoration: 3px underline  #1a3d5d;">CONTACT </a></li>
+           
+               
+            </ul>
+
+
+        </div>
+
+
+
+
+
+
+    </header><br><br>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, feel free to reach out to us through the following ways.</p>
+        
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <div>
+                <h3>Email Us</h3>
+                <p><a href="mailto:frantech34@gmail.com">frantech34@gmail.com</a></p>
+            </div>
+            <div>
+                <h3>Call Us</h3>
+                <p>Phone: <a href="tel:+233592904837">+233 592 904 837</a></p>
+                <p>Help Line: <a href="tel:+233987654321">+233 534 068 11</a></p>
+            </div>
+            <div>
+                <h3>Visit Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Efiakuma blackberry street, Takoradi</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Send us a message</h2>
+            <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/check.in_pizza_" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/checkinpizza" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@checkinpizza" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <h4>Follow us</h4>
+            <div class="icons">
+                <i class=" fab fa-facebook"></i>
+                <i class=" fab fa-instagram"></i>
+                <i class=" fab fa-twitter"></i>
+            </div>
+    </footer>
+        
+    <script>
+         
+         //toggling menu bar
+ let bars =document.querySelector('.fa-bars');
+ let menu = document.querySelector('.menulist');
+
+ bars.addEventListener('click',(e)=>{
+
+    menu.classList.toggle("menuToggle");
+
+ })
+        function sendToWhatsApp(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // WhatsApp number (Replace with your WhatsApp Business number)
+            var phoneNumber = "+233592904837";
+
+            // Create the WhatsApp message link
+            var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" 
+                            + "Name: " + encodeURIComponent(name) + "%0A"
+                            + "Email: " + encodeURIComponent(email) + "%0A"
+                            + "Message: " + encodeURIComponent(message);
+
+            // Redirect to WhatsApp
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+
+</body>
+</html>

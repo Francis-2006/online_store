@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.css">
+    <style>
+         header{
+            display: flex;
+            gap: 5rem;
+            height:3rem;
+            margin-top: -8px;
+            margin-left: -8px;
+            width: 100%;
+            box-shadow: 0 0 10px grey;
+            border-radius: 5px;
+            padding: 2px;
+            /* position: absolute; */
+            position: fixed;
+            background-color: #ffffff;
+            
+
+            z-index: 3;
+        }
+        .logo{
+            padding: 3px;
+            margin-top: 14px;
+            margin-left: 2px;
+        }
+        ul{
+            margin-top: 3rem;
+            margin-left: -4.5rem;
+            box-shadow: 0 0 8px grey;
+            border-radius: 1rem;
+            padding: 2rem;
+            /* display:none; */
+            margin-top: -25rem;
+            position: absolute;
+            z-index: 4;
+            transition: 0.3s ease-in-out;
+            background-color: #ffffff;
+        }
+        .menuToggle{
+            margin-top: 2rem;
+            margin-left: -4.5rem;
+            position: absolute;
+
+            z-index: 12;
+        }
+        .firstName{
+            
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #1a3d5d;
+            font-size: 1.1rem;
+            font-style: bold;
+            font-weight: 14rem;
+        }
+       .menu{
+        margin-left: -2rem;
+       }
+       .cart{
+        margin-top: 20px;
+        margin-left: 1rem;
+        display: none;
+       }
+       
+        .fa-bars{
+            margin-left: 4rem;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+        .fa-bars:active{
+            scale: 0.7;
+        }
+
+        li{
+            list-style: none;
+            padding: 2px;
+            margin-bottom: 6px;
+        }
+        li a{
+            text-decoration: none;
+            color: black;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        }
+        li a:focus{
+            text-decoration: underline;
+        }
+        .checkout{
+            background: rgb(68, 167, 68);
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 4rem;
+            text-align: center;
+           
+           
+        }
+.checkout:hover{
+    background: green;
+}       
+.checkout:active{
+    scale: 0.7;
+}
+.delete{
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.delete:active{
+    scale:0.7;
+
+}
+table{
+    border-collapse: collapse;
+    width: 6rem;
+    text-align: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 1rem; */
+    /* padding-right: 1rem; */
+}
+table th{
+    padding: 8px;
+}
+.total{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+td input{
+    border: none;
+    height: 30px;
+    /* align-items: center; */
+    text-align: center;
+    width: 5rem;
+    outline: none;
+}
+  /* Footer */
+  .footer {
+            background-color: #1a3d5d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            /* margin-top: 50px; */
+            /* margin-left: 30px; */
+            width: 100%;
+            text-align: center;
+            /* display: none; */
+        }
+
+        .footer p {
+            /* margin: 0; */
+            font-size: 16px;
+        }
+
+.your-cart{
+font-family:Georgia, 'Times New Roman', Times, serif ;
+text-align: center;
+}
+
+
+        /* media responsiveness */
+        
+        @media(min-width:330px){
+.menu{
+    margin-left: -1rem;
+    
+}
+.menuToggle{
+    margin-left: -2rem;
+}
+
+}
+@media(min-width:390px){
+    .menu{
+    margin-left: 2rem;
+}
+}
+@media(min-width:450px){
+    .menu{
+    margin-left: 4.7rem;
+    }
+    td{
+        padding: 7px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    td input::placeholder{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+}
+@media(min-width:500px){
+    .menu{
+    margin-left: 7rem;
+}
+.menuToggle{
+    margin-left: -2rem;
+}
+
+
+   }
+@media(min-width:550px){
+    .menu{
+    margin-left: 13rem;
+}
+}
+@media(min-width:600px){
+
+    .menu{
+    margin-left: 18rem;
+
+}
+
+}
+@media(min-width:700px){
+    .menu{
+    margin-left: 19rem;
+}
+.logo{
+    margin-left: 3rem;
+}
+
+
+
+}
+@media(min-width:768px){
+    .menu{
+    margin-left: 25rem;
+}
+
+}
+@media(min-width:850px){
+    .menu{
+    margin-left: 30rem;
+}
+}
+@media(min-width:970px){        
+
+
+ul{
+    display: flex;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin-top: -3.4rem;
+    margin-left: -17rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menuToggle{
+    margin-left: -7rem;
+    margin-top: none;
+  
+}
+table th{
+    padding: 1rem;
+}
+td{
+    padding: 1.4rem;
+}
+td input {
+    outline: none;
+}
+.fa-bars{
+    visibility: collapse;
+}
+li{
+    margin-left: 8px;
+}
+}
+@media (min-width:1000px){
+    .firstName{
+        font-family: 2.4rem;
+    }
+    .fa-shopping-cart{
+        font-size: 1.4rem;
+        margin-left: 3rem;
+    }
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+}
+
+
+
+@media(min-width:1200px){
+    ul{
+        margin-left: -6rem;
+    }
+    .firstName{
+        font-size: 1.8rem;
+    }
+    span.secondName{
+        font-size: 1.4rem;
+    }
+    #sec1{
+        width: 40rem;
+        box-shadow: 0 0 5px;
+    }
+    input{
+        padding:10px;
+    }
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+}
+@media(min-width:1300px){
+    
+    #sec2,#sec3,#sec4{
+        box-shadow: none;
+    }
+
+}
+@media(min-width:1400px){
+    #sec1{
+        width: 54rem;
+        box-shadow: none;
+    }
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+}
+
+@media(min-width:1500px){
+    #sec1,#sec2,#sec3,#sec4{
+    box-shadow: none;
+    background: rgb(252, 250, 250);
+}
+
+}
+@media(min-width:1800px){
+
+    #sec1{
+        width: 62rem;
+        box-shadow: 0 0 5px;
+    }  
+}
+    </style>
+</head>
+<body>
+
+
+    <header>
+
+        <div class="logo">
+            <span class="firstName">🛒ASIMAV</span><span class="secondName"> VENT</span>
+        </div>
+
+        <div class="cart">
+            <i class="fa fa-shopping-cart"></i>
+        </div>
+
+        <div class="menu">
+
+            <i class="fa fa-bars"></i>
+            <ul class="menulist">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./menu.html">MENU</a></li>
+            <li><a href="./about.html">ABOUT US</a></li>
+            <li><a href="./cart.html" style="text-decoration: underline  #1a3d5d;">CART</a></li>
+            <li><a href="./contact.html">CONTACT </a></li>
+           
+            
+               
+            </ul>
+
+
+        </div>
+
+
+
+
+
+
+    </header><br><br>
+
+    <h1 class="your-cart">Your Cart</h1>
+
+    <section>
+    <table border="1" class="table">
+        <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <!-- <th></th> -->
+            
+        </tr>
+        <tbody id="cart-item"></tbody>
+        
+
+    </table>
+    <h2 class="total"></h2>
+    <p id="emptyCartMessage" style="color: red;"></p>
+   
+    <button class="delete">Empty cart</button><br>
+    </section>
+    <button class="checkout">proceed to checkout</button>
+
+
+    
+<footer class="footer">
+    <h4>Follow us</h4>
+        <div class="icons">
+            <i class=" fab fa-facebook"></i>
+            <i class=" fab fa-instagram"></i>
+            <i class=" fab fa-twitter"></i>
+        </div><br><br>
+        <p>©Copyright 2025 Frantech</p>
+        <p>Private Policy</p>
+</footer>
+<script>
+         //toggling menu bar
+ let bars =document.querySelector('.fa-bars');
+ let menu = document.querySelector('.menulist');
+
+ bars.addEventListener('click',(e)=>{
+
+    menu.classList.toggle("menuToggle");
+
+ })
+
+
+function showCart() {
+
+    const Tbody = document.querySelector('#cart-item');
+    const emptyCartMessage = document.getElementById('emptyCartMessage');
+    // Retrieve the product in the localstorage
+
+    const name =localStorage.getItem('name');
+    const price =localStorage.getItem('price');
+    const image =localStorage.getItem('Image');
+    
+    if (name&&price&&image) {
+        
+        emptyCartMessage.textContent = "";
+
+const row = document.createElement('tr');
+
+
+
+ const imageCell=document.createElement('td');
+ const img =document.createElement('img');
+img.src=image;
+
+img.style.width='50px';
+imageCell.appendChild(img)
+row.appendChild(imageCell);
+
+ const nameCell=document.createElement('td');
+nameCell.textContent=name;
+row.appendChild(nameCell);
+
+ const priceCell=document.createElement('td');
+priceCell.textContent=`GHS${price}`;
+row.appendChild(priceCell);
+
+// created a quantity input
+const quantityCell =document.createElement('td');
+const quantityInput =document.createElement('input');
+quantityInput.placeholder="input quantity"
+const total =document.querySelector('.total');
+
+
+
+
+
+// compute the total
+quantityInput.addEventListener('keyup',()=>{
+
+
+total.textContent=`Total:GHS${quantityInput.value*parseFloat(price).toFixed(2)}.00`;
+
+})
+
+
+
+
+quantityCell.appendChild(quantityInput);
+row.appendChild(quantityCell);
+
+// emptying the cart
+let deleteKey=document.querySelector('.delete');
+deleteKey.addEventListener('click',()=>{
+ const table =document.querySelector('.table');
+
+ row.remove();
+ localStorage.removeItem('name');
+      localStorage.removeItem('price');
+      localStorage.removeItem('size');
+      localStorage.removeItem('Image');
+
+     
+        emptyCartMessage.textContent = "Your cart is empty!";
+     
+
+})
+
+// append the row to the table body
+Tbody.appendChild(row)
+
+// proceeding to checkout
+const checkout =document.querySelector('.checkout');
+checkout.addEventListener('click',()=>{
+
+    // checking if the quantity value is not empty
+if (quantityInput.value.trim()==="") {
+    alert(`Enter the number of ${name} you are buying`);
+}else{
+
+window.location.href='checkout.html';
+
+// adding the quantity and total to the local storage
+localStorage.setItem('quantity',quantityInput.value);
+localStorage.setItem('total',total.textContent);
+
+}
+
+})
+
+}else{
+ // Display an empty cart message
+ emptyCartMessage.textContent = "Your cart is empty!";
+
+}
+
+
+
+
+}
+window.onload=showCart();
+
+
+
+</script>
+</body>
+</html>
