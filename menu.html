@@ -44,7 +44,7 @@
         }
         ul{
             margin-top: 3rem;
-            margin-left: -4.5rem;
+            margin-left: -4rem;
             box-shadow: 0 0 8px grey;
             border-radius: 1rem;
             padding: 2rem;
@@ -244,111 +244,128 @@
         width: 100%;
         padding: 5px;
     }
-    
-@media(min-width: 360px){
-  header{
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height:5rem;
-    margin-top: -8px;
-    margin-left: -8px;
-    width: 100%;
-    box-shadow: 0 0 10px grey;
-    border-radius: 5px;
-    padding: 2px;
-    position: absolute;
-    position: fixed;
-    background-color: #ffffff;
-    z-index: 3;
-  }
-  .fa-bars{
-    margin-left: -2rem;
-    margin-top: 1rem;
-    font-size: 1.3rem;
-  }
-  .logo{
-    padding: 6px;
-    margin-top: 14px;
-    margin-left: -9rem;
-  }
-  .cartBtn{
-    width:5rem;
-    height: 2rem;
-    text-align: center;
-    padding: 3px;
-    margin-top: 8px;
-    margin-left: -3rem;
-    border: none;
-    background:  #1a3d5d;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-
-  }
-  .item img{
-    max-width: 200px;
-  }
-  .item{
-    margin-top: 2rem;
-  }
-  .menulist{
-    margin-left: -10rem;
-  }
-}
-@media(min-width:480px){
-  .container{
-    display: grid;
-    grid: auto/auto auto;
-  }
-  .menulist{
-    margin-left: -10rem;
-  }
-  .item img{
-    max-width: 180px;
-  }
-  
-.fa-bars{
-  margin-left: -6rem;
-}
-  
-
-}
-@media(min-width: 768px){
-
-.container{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 10px;}
-
-
-.fa-bars{
-  margin-left: -6rem;
-}
-.logo{
-  margin-left: -15rem;
-}
-      .cartBtn{
-        margin-left: -10rem;
-      }
+    .heading{
+      text-align: center;
+      padding: 2rem;
+      font-size: 4rem;
+      font-family: cursive;
     }
     
-      @media(min-width: 1000px){
-        .container{
-          display: grid;
-          grid-template-columns: repeat(4,1fr);
-          gap: 10px;}
-        
       
-    
+
+/* media query */
+@media (min-width:320px) {
+  
+    .fa-bars{
+        margin-left: 5rem;
+        font-size: 2rem;
+    }
+    .menuToggle{
+        margin-left: -2rem;
+        /* background: transparent; */
+       
+       
+    }
+    .firstName,.secondName{
+        font-size: 2rem;
+    }
+    .item img{
+      max-width: 10rem;
+    }
+    .item{
+      margin-bottom: 2rem;
+    }
+   
+
+}@media(min-width:360px){
+}
+
+@media(min-width:390px){
+    .fa-bars{
+        margin-left: 8rem;
+    }
+    .menuToggle{
+        margin-left: 2rem;
+    }
+    header{
+      gap: 1rem;
+    }
+    /* .logo{
+      margin-left: -2.5rem;
+    }
+   */
+}
+@media(min-width:500px){
+    .fa-bars{
+        margin-left: 10rem;
+    }
+    .menuToggle{
+        margin-left: 4rem;
+    }
+    .container{
+      display: grid;
+      grid:auto/auto auto;
+    }
+}
+@media(min-width:600px){
+    .fa-bars{
+        margin-left: 23rem;
+    }
+    .menuToggle{
+        margin-left: 20rem;
+    }
+   
+}
+@media(min-width:700px){
+    .fa-bars{
+        margin-left: -5rem;
+    }
+    .menuToggle{
+        margin-left: -10rem;
+    }
+    .item img{
+      max-width: 15rem;
+    }
+    .item .name{
+      font-size: 2rem;
+    }
+    .item .price{
+      font-size: 2rem;
+    }
+    .item span{
+      font-size: 2rem;
+    }
+    .item p{
+      font-size: 1.4rem;
+    }
+    header{
+      justify-content: space-between;
+    }
+    .logo{
+      margin-left: 2rem;
+    }
+ 
+}
+@media(min-width:768px){
+  
+    .fa-bars{
+        margin-left: -6rem;
+    }
+    .menuToggle{
+        margin-left: -10rem;
+    }
+   
+   
+}
+@media(min-width:820px){
+  
 ul{
     display: flex;
     background: none;
     border: none;
     box-shadow: none;
-    margin-top: -3.4rem;
-    margin-left: -23rem;
+    margin-top: -3.9rem;
+    margin-left: -26rem;
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 .menuToggle{
@@ -356,53 +373,67 @@ ul{
     margin-top: none;
   
 }
+.cartBtn{
+  margin-left: -15rem;
+}
 .fa-bars{
     visibility: collapse;
 }
-li{
-    margin-left: 8px;
+li a{
+    font-family: monospace;
+    font-size: 1.2rem;
+    margin-left: 1rem;
 }
-.menulist{
-    margin-left: -25rem;
-    
-  }
+}
+@media(min-width:884px){
+   .container{
+    display: grid;
+    grid:auto/auto auto auto
+   }
 
-      }
+}
+@media(min-width:1000px){
+    ul{
+        margin-left: -28rem;
+    }
+    .banner-name h2{
+        font-size: 5rem;
+    }
+   
+}
+
+@media(min-width:1114px){
+    ul{
+        margin-left: -28rem;
+    }
+    .logo{
+        margin-left: 5rem;
+    }
+    .item img{
+      max-width: 13rem;
+    }
+    .item .name{
+      font-family: cursive;
+      font-size: 1.3rem;
+    }
+    .item span{
+      font-size: 1.2rem;
+    }
+    .item .price{
+      font-size: 1.2rem;
+    }
+
+}
   </style>
 </head>
 <body>
   <header>
   
-    <svg
-    class="containers"
-    x="0px"
-    y="0px"
-    viewBox="0 0 50 31.25"
-    height="31.25"
-    width="50"
-    preserveAspectRatio="xMidYMid meet"
-  >
-    <path
-      class="track"
-      stroke-width="4"
-      fill="none"
-      pathlength="100"
-      d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
-    />
-    <path
-      class="car"
-      stroke-width="4"
-      fill="none"
-      pathlength="100"
-      d="M0.625 21.5 h10.25 l3.75 -5.875 l7.375 15 l9.75 -30 l7.375 20.875 v0 h10.25"
-    />
-  </svg>
- 
-
+  
 
 
     <div class="logo">
-        <span class="firstName">🛒ASIMAV</span><span class="secondName"> VENT</span>
+      <span class="firstName">🛒A</span><span class="secondName"> V</span>
     </div>
 
   
@@ -432,7 +463,7 @@ li{
 
 
 </header><br><br><br>
-
+<h1 class="heading">Menu</h1>
   <section>
 
       <div class="container">

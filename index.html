@@ -193,17 +193,18 @@
         }
 
         /* Footer */
-        .footer {
-            background-color: #1a3d5d;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 50px;
-            margin-left: 30px;
-            width: 100%;
-            text-align: center;
-            /* display: none; */
-        }
+           
+footer{
+    text-align: center;
+    background: #1a3d5d;
+    color: white;
+    padding: 1rem;
+    /* border-radius: 1rem; */
+    margin-top: 1rem;
+    width:100%;
+    margin-left: -1rem;
+    margin-bottom: -10px;
+}
 
         .footer p {
             margin: 0;
@@ -304,7 +305,7 @@
 .contact{
     border: 1px solid grey;
     padding: 2rem;
-    width: 80%;
+    /* width: 1%; */
     height:2rem;
     margin: 2rem;
     margin-top: 3rem;
@@ -323,119 +324,226 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 span h3{
-    font-size: 1.2rem;
+    font-size: 1rem;
    margin-top: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 span p{
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: -8px;
 }
      
 
+/* media query */
+@media (min-width:320px) {
+    .banner-name h2{
+        font-size: 3rem;
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 0 0 10px black;
+    }
+    .main img{
+        max-width:30rem;
+      
+     
+    }
+    .banner-name{
+        position: absolute;
+        z-index: 2;
+        backdrop-filter:brightness(80%);
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+    .item img{
+        max-width: 10rem;
+    }
+    .item{
+        height: 20rem;
+    }
 
-
+    .ratings{
+        display: grid;
+        grid: auto /auto auto;
+        width: 73%;
+        margin-left: 1rem;
+        /* grid-gap: 4rem; */
+        text-align: left;
+        padding-right: 3rem;
+        border: 1px solid grey;
+       grid-column-gap: 3.5rem;
+       margin-bottom: 3rem;
+       margin-top: 3rem;
+    }
+    .stock h2{
+        max-width: 1rem;
+        /* font-size: 2rem; */
+   
         
-        /* media responsiveness */
-        
-        @media(min-width:330px){
-.menu{
-    margin-left: -1rem;
-    
-}
-.menuToggle{
-    margin-left: -2rem;
-}
-}
-@media(min-width:390px){
-  
-    .menu{
-    margin-left: 2rem;
-}
-.fa-bars{
-    margin-left: 6rem;
-    font-size: 1.7rem;
-}
-
-.menuToggle{
-    margin-left: 2rem;
-}
-}
-@media(min-width:450px){
-    .menu{
-    margin-left: 4.7rem;
+    }
+    .stock p{
+     
+        font-size: 20px;
+    }
+    .contact{
+        display: grid;
+        grid-row-gap: 10px;
+        /* position:relative; */
+        /* margin-bottom: 30rem; */
+        height:auto;
+        padding: 2rem;
+        width: auto;
+    }
+    .fa-bars{
+        margin-left: 13rem;
+        font-size: 2rem;
+    }
+    .menuToggle{
+        margin-left: 7rem;
+        /* background: transparent; */
+       
+       
+    }
+    .firstName,.secondName{
+        font-size: 2rem;
     }
    
-    footer{
-        margin-left: -10px;
+
+}@media(min-width:360px){
+
+    .banner-name button{
+        font-size: 16px;
+        padding: 5px;
+        width: 6rem;
+        font-family:Arial, Helvetica, sans-serif; 
+        height: 50px;
+        background: royalblue;
+    }
+    .banner-name p{
+        font-size: 20px;
+        font-family:monospace;
+        font-style: bold;
+        font-weight: 700;
+
+    }
+    .explore h1,.hot,.explore span{
+        font-size: 1.7rem;
+        margin-top: 3rem;
+        text-decoration: underline;
     }
 }
+
+@media(min-width:390px){
+    .fa-bars{
+        margin-left: 15rem;
+    }
+    .menuToggle{
+        margin-left: 10rem;
+    }
+    .ratings h2{
+        font-size: 2rem;
+    }    
+}
 @media(min-width:500px){
-    .menu{
-    margin-left: 7rem;
-}
-.fa-bars{
-    margin-left: 4rem;
-}
-.menuToggle{
-    margin-left: -2rem;
-}
-
-
-   }
-@media(min-width:550px){
-    .menu{
-    margin-left: 13rem;
-}
+    .fa-bars{
+        margin-left: 18rem;
+    }
+    .menuToggle{
+        margin-left: 14rem;
+    }
 }
 @media(min-width:600px){
-
-    .menu{
-    margin-left: 18rem;
-
-}
-
+    .fa-bars{
+        margin-left: 23rem;
+    }
+    .menuToggle{
+        margin-left: 19rem;
+    }
+    .ratings{
+        margin-left: 3rem;
+    }
 }
 @media(min-width:700px){
-    .menu{
-    margin-left: 19rem;
-}
-.fa-bars{
-    margin-left: 1rem;
-}
-.logo{
-    margin-left: 3rem;
-}
+    .fa-bars{
+        margin-left: 30rem;
+    }
+    .menuToggle{
+        margin-left: 26rem;
+    }
+    .ratings{
+        margin-left: 2rem;
+    }
+    .banner-name h2{
+        font-size: 4rem;
 
-
-
+    }
 }
 @media(min-width:768px){
-    .menu{
-    margin-left: 25rem;
+    .banner-name{
+        position: relative;
+        backdrop-filter: brightness(100%);
+        margin-left: 6rem;
+    }
+    .banner-name p{
+        font-size: 1.5rem;
+    }
+    .banner-name button{
+        font-size: 1.5rem;
+        width: 8rem;
+    }
+    .banner-name h2{
+        color: orange;
+        text-shadow: none;
+        font-family:cursive;
+        font-weight: 800;
+    }
+    .banner-name::before{
+        content: 'Welcome to';
+        font-size: 2rem;
+        font-family: cursive;
+        font-style: italic;
+    }
+    .fa-bars{
+        margin-left: 35rem;
+    }
+    .menuToggle{
+        margin-left: 30rem;
+    }
+    .ratings{
+        display: grid;
+        grid: auto/auto auto auto;
+        /* margin-left: -1rem; */
+        width: 42rem;
+        height: auto;
+       
+    }
+    .ratings h2{
+        font-size: 2rem;
+    }
+    .contact{
+        display: flex;
+        gap: 20px;
+        width: 80%;
+        padding: 5px;
+        padding-left: 50px;
+        padding-right: 50px;
+        /* margin-left: -0.1px; */
+    }
+   
 }
-
-}
-@media(min-width:850px){
-    .menu{
-    margin-left: 30rem;
-}
-}
-@media(min-width:970px){        
-
-
+@media(min-width:820px){
+  
 ul{
     display: flex;
     background: none;
     border: none;
     box-shadow: none;
-    margin-top: -3.4rem;
-    margin-left: -23rem;
+    margin-top: -3.9rem;
+    margin-left: 15rem;
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 .menuToggle{
@@ -446,131 +554,64 @@ ul{
 .fa-bars{
     visibility: collapse;
 }
-li{
-    margin-left: 8px;
+li a{
+    font-family: monospace;
+    font-size: 1.2rem;
+    margin-left: 1rem;
 }
 }
-@media (min-width:1000px){
-    .firstName{
-        font-family: 2.4rem;
+@media(min-width:884px){
+    .ratings{
+        display: flex;
+      
+        /* margin-left: -1px; */
+        width: 49rem;
+      
+        height: auto;
+        padding-left: 7px;
+       
     }
+   
+    .ratings h2{
+        font-size: 2rem;
+    }
+    .contact{
+        height: 10rem;
+    }
+
 }
-
-
-
-@media(min-width:1200px){
+@media(min-width:1000px){
     ul{
-        margin-left: -6rem;
+        margin-left: 24rem;
     }
-    .firstName{
-        font-size: 1.8rem;
+    .banner-name h2{
+        font-size: 5rem;
     }
-    span.secondName{
-        font-size: 1.4rem;
+    .main img{
+        width: 30rem;
     }
    
 }
-@media(min-width:1300px){
-    
-  
-
-}
-@media(min-width:1400px){
-  
-}
-
-@media(min-width:1500px){
- 
-}
-@media(min-width:1800px){
-
-}
-
-/* second media query */
-
-
-
-@media(max-width:1069px){
-   .ratings{
-    grid:auto/auto auto
-   }
-   .contact{
-    display: block;
-    margin-bottom: 2rem;
-    height: 20rem;
-   }
-   footer{
-    width: 100%;
-   }
-}
-
-@media(max-width:901px){
-    .banner-name{
-        margin-left: 7rem;
-    }
-}
-@media(max-width:788px){
-    .banner-name{
-        margin-left: 15rem;
-    }
-}
-@media(max-width:794px){
-   .main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-   }
-   .banner-name{
-    margin-left: -1rem;
-   }
-   .main img{
-    margin-left: 12rem;
-   }
-}
-@media(max-width:648px){
-.banner-name{
-    text-align: center;
-}
-.banner-name h2{
-    font-size: 2rem;
-}
-
-}
-@media(max-width:490px){
-.main img{
-    margin-left: -3rem;
-}
-
-
-}
-@media(max-width:410px){
-.main img{
-    margin-left: -3rem;
-    scale: 0.7;
-}
-.explore img{
-    scale: 0.7;
-}
-.banner-name{
-    padding-left: 30px;
+@media(min-width:1114px){
+.ratings{
+    width: 88%;
 }
 .contact{
-    scale: 0.86;
+    gap:7rem
 }
-.ratings{
-    scale: 0.78;
-}
-
-}
-@media(max-width:380px){
-    .contact{
-        scale: 0.7;
-        margin-left: -0.5rem;
-        margin-top: -3rem;
+ul{
+        margin-left: 32rem;
     }
 }
+@media(min-width:1114px){
+    ul{
+        margin-left: 38rem;
+    }
+    .logo{
+        margin-left: 5rem;
+    }
 
+}
     </style>
    
     
@@ -583,7 +624,7 @@ li{
     <header>
 
         <div class="logo">
-            <span class="firstName">🛒ASIMAV</span><span class="secondName"> VENT</span>
+            <span class="firstName">🛒A</span><span class="secondName"> V</span>
         </div>
 
         <div class="cart">
@@ -726,6 +767,7 @@ li{
 
 
 <div class="ratings">
+   
             
     <div class="stock">
         <h2>1000+</h2>
@@ -790,15 +832,14 @@ li{
 
    
 
-<footer class="footer">
+<footer>
     <h4>Follow us</h4>
         <div class="icons">
             <i class=" fab fa-facebook"></i>
             <i class=" fab fa-instagram"></i>
             <i class=" fab fa-twitter"></i>
-        </div><br><br>
-        <p>©Copyright 2025 Frantech</p>
-        <p>Private Policy</p>
+        </div>
+        <p>FranTech Media</p>
 </footer>
 <marquee behavior="smooth" direction=""> <p> Your trusted choice for all your shopping needs.</p></marquee>
 
