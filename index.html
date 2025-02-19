@@ -10,6 +10,8 @@
     <style>
         /* General Styles */
         body {
+            /* overflow:hidden; */
+            overflow-x: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
@@ -64,7 +66,7 @@
         .firstName{
             
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            color: ;
+        
             font-size: 1.1rem;
             font-style: bold;
             font-weight: 14rem;
@@ -229,6 +231,7 @@ footer{
 }
 .explore h1{
     font-size: 2rem;
+    margin-top: 3rem;
 }
 .hot{
     font-size: 2.5rem;
@@ -245,6 +248,7 @@ footer{
     /* width: 20rem; */
     text-align: center;
     margin-left: 1rem;
+    font-size: 1.5rem;
     margin-right: 1rem;
     /* background: grey; */
 }
@@ -258,9 +262,9 @@ footer{
 .items{
     display: flex;
     overflow-x: scroll;
-    gap: 2rem;
+    gap: 2px;
     scroll-behavior: smooth;
-    height: 22rem;
+    height: 14rem;
     /* padding: 0.3rem; */
 }
 .items::-webkit-scrollbar{
@@ -268,9 +272,9 @@ footer{
 }
 
 .items div figcaption h2{
-    font-size: 1.35rem;
+    font-size: 1rem;
     margin: 10px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 .items div figcaption p{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -282,14 +286,14 @@ footer{
     padding: 2rem;
 }
 .ratings div{
-    text-align: center;
-    margin:1rem;
+    text-align:left;
+    margin:0.7rem;
 
 }
 .ratings h2{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-    margin: 1rem;
-    font-size: 3rem;
+    margin: 0.7rem;
+    font-size: 2rem;
 
 }
 .ratings p{
@@ -337,273 +341,266 @@ span p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: -8px;
 }
+
+.side-icon{
+    float: right;
+}
+.side-icon i{
+    font-size: 1.5rem;
+    margin:1rem;
+    border: 1px solid ;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    /* background:#dc4d01; */
+    background: #1a3d5d;
+    color: white;
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
      
 
 /* media query */
 @media (min-width:320px) {
     .banner-name h2{
         font-size: 3rem;
+        /* position: absolute; */
+        
+        margin-top: 0px;
         color: white;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: Georgia, 'Times New Roman', Times, serif;
         text-shadow: 0 0 10px black;
     }
     .main img{
-        max-width:30rem;
+        max-width:100%;
+        height: 20rem;
+        filter: brightness(60%);
       
      
     }
     .banner-name{
         position: absolute;
         z-index: 2;
-        backdrop-filter:brightness(80%);
+        /* backdrop-filter:brightness(80%); */
         padding: 1rem;
+        margin-top: 110px;
         margin-bottom: 2rem;
+    
+    }
+    
+    .banner-name p{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.2rem;
+        color:black;
     }
     .item img{
-        max-width: 10rem;
+        max-width: 6rem;
     }
     .item{
         height: 20rem;
+    }
+  
+    .explore h1{
+        font-size: 1.5rem;
+    }
+    .hot{
+        font-size: 1.5rem;
     }
 
     .ratings{
         display: grid;
         grid: auto /auto auto;
         width: 73%;
-        margin-left: 1rem;
+        margin-left: -1rem;
         /* grid-gap: 4rem; */
         text-align: left;
         padding-right: 3rem;
-        border: 1px solid grey;
+        /* border: 1px solid grey; */
        grid-column-gap: 3.5rem;
        margin-bottom: 3rem;
-       margin-top: 3rem;
+       margin-top: 1rem;
     }
     .stock h2{
-        max-width: 1rem;
-        /* font-size: 2rem; */
+        /* max-width: 1rem; */
+        font-size: 1.5rem;
    
         
     }
     .stock p{
      
-        font-size: 20px;
+        font-size: 17px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .contact{
-        display: grid;
-        grid-row-gap: 10px;
+        display: block;
+        /* grid-row-gap: 10px; */
         /* position:relative; */
         /* margin-bottom: 30rem; */
         height:auto;
         padding: 2rem;
-        width: auto;
+        width: 14.5rem;
+        margin-left: 10px;
+    }
+    /* .fa-envelope{
+        padding: 10px;
+    } */
+    .contact p{
+        font-size: 13px;
     }
     .fa-bars{
-        margin-left: 13rem;
-        font-size: 2rem;
+        margin-left: 10rem;
+        font-size: 1.2rem;
     }
     .menuToggle{
-        margin-left: 7rem;
+        margin-left: 5rem;
         /* background: transparent; */
        
        
     }
     .firstName,.secondName{
-        font-size: 2rem;
-    }
-   
-
-}@media(min-width:360px){
-
-    .banner-name button{
-        font-size: 16px;
-        padding: 5px;
-        width: 6rem;
-        font-family:Arial, Helvetica, sans-serif; 
-        height: 50px;
-        background: royalblue;
-    }
-    .banner-name p{
-        font-size: 20px;
-        font-family:monospace;
-        font-style: bold;
-        font-weight: 700;
-
-    }
-    .explore h1,.hot,.explore span{
-        font-size: 1.7rem;
-        margin-top: 3rem;
-        text-decoration: underline;
+        font-size: 1.3rem;
     }
 }
-
-@media(min-width:390px){
+   @media (min-width:400px) {
+    .menuToggle{
+        margin-left: 9rem;
+        /* background: transparent; */
+       
+       
+    }
     .fa-bars{
         margin-left: 15rem;
+        font-size: 1.2rem;
     }
-    .menuToggle{
-        margin-left: 10rem;
-    }
-    .ratings h2{
-        font-size: 2rem;
-    }    
-}
+
+   
+   }
 @media(min-width:500px){
+    .ratings{
+        grid: auto/auto auto auto;
+    }
     .fa-bars{
-        margin-left: 18rem;
+        margin-left: 20rem;
     }
     .menuToggle{
-        margin-left: 14rem;
+        margin-left: 15rem;
+        /* background: transparent; */
+       
+       
+    }
+    .contact{
+        /* display: grid; */
+        /* grid: auto/auto auto; */
+        margin-left: 7rem;
+        margin-top: -4rem;
     }
 }
 @media(min-width:600px){
+    .ratings{
+        grid: auto/auto auto auto;
+    }
     .fa-bars{
-        margin-left: 23rem;
+        margin-left: 25rem;
     }
     .menuToggle{
-        margin-left: 19rem;
+        margin-left: 20rem;
+        /* background: transparent; */
+       
+       
     }
-    .ratings{
-        margin-left: 3rem;
+    .contact{
+        /* display: grid; */
+        /* grid: auto/auto auto; */
+        margin-left: 7rem;
+        margin-top: -4rem;
+    }
+    .main img{
+        width: 100%;
     }
 }
 @media(min-width:700px){
     .fa-bars{
-        margin-left: 30rem;
+        margin-left: 32rem;
     }
     .menuToggle{
         margin-left: 26rem;
-    }
-    .ratings{
-        margin-left: 2rem;
-    }
-    .banner-name h2{
-        font-size: 4rem;
-
-    }
-}
-@media(min-width:768px){
-    .banner-name{
-        position: relative;
-        backdrop-filter: brightness(100%);
-        margin-left: 6rem;
-    }
-    .banner-name p{
-        font-size: 1.5rem;
-    }
-    .banner-name button{
-        font-size: 1.5rem;
-        width: 8rem;
-    }
-    .banner-name h2{
-        color: orange;
-        text-shadow: none;
-        font-family:cursive;
-        font-weight: 800;
-    }
-    .banner-name::before{
-        content: 'Welcome to';
-        font-size: 2rem;
-        font-family: cursive;
-        font-style: italic;
-    }
-    .fa-bars{
-        margin-left: 35rem;
-    }
-    .menuToggle{
-        margin-left: 30rem;
-    }
-    .ratings{
-        display: grid;
-        grid: auto/auto auto auto;
-        /* margin-left: -1rem; */
-        width: 42rem;
-        height: auto;
+        /* background: transparent; */
+       
        
     }
-    .ratings h2{
-        font-size: 2rem;
+    .ratings{
+        grid: auto/auto auto auto auto;
     }
     .contact{
-        display: flex;
-        gap: 20px;
-        width: 80%;
-        padding: 5px;
-        padding-left: 50px;
-        padding-right: 50px;
-        /* margin-left: -0.1px; */
+      display: grid;
+      grid:auto/ auto auto;
+      border:none;
+      margin-top: -8rem;
     }
-   
 }
-@media(min-width:820px){
-  
+@media(min-width:800px){
+    
 ul{
     display: flex;
     background: none;
     border: none;
     box-shadow: none;
-    margin-top: -3.9rem;
-    margin-left: 15rem;
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    margin-top: -3.4rem;
+    margin-left: 20rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .menuToggle{
     margin-left: -7rem;
     margin-top: none;
   
 }
+table th{
+    padding: 1rem;
+}
+td{
+    padding: 1.4rem;
+}
+td input {
+    outline: none;
+}
 .fa-bars{
     visibility: collapse;
 }
-li a{
-    font-family: monospace;
-    font-size: 1.2rem;
-    margin-left: 1rem;
+li{
+    margin-left: 8px;
+}
+.ratings{
+    grid: auto/auto auto auto auto auto;
+}
+.contact{
+    grid:auto/auto auto auto;
+    margin-left: 15rem;
 }
 }
-@media(min-width:884px){
-    .ratings{
-        display: flex;
-      
-        /* margin-left: -1px; */
-        width: 49rem;
-      
-        height: auto;
-        padding-left: 7px;
-       
+@media(min-width:900px){
+    ul{
+        margin-left: 26rem;
     }
-   
-    .ratings h2{
-        font-size: 2rem;
+    .ratings{
+        margin-left: 2rem;
+        margin-bottom: 5rem;
     }
     .contact{
-        height: 10rem;
+        margin-left: 18rem;
+        
+    }
+    .logo{
+        margin-left: 2rem;
     }
 
 }
-@media(min-width:1000px){
+@media(min-width:1200px){
     ul{
-        margin-left: 24rem;
-    }
-    .banner-name h2{
-        font-size: 5rem;
-    }
-    .main img{
-        width: 30rem;
-    }
-   
-}
-@media(min-width:1114px){
-.ratings{
-    width: 88%;
-}
-.contact{
-    gap:7rem
-}
-ul{
-        margin-left: 25rem;
-    }
-    .logo{
-        margin-left: 5rem;
+        margin-left: 39rem;
     }
 }
 
@@ -612,7 +609,7 @@ ul{
    
     
 </head>
-<body>
+<body onload="move()">
 
    
 
@@ -648,6 +645,7 @@ ul{
 
 
     </header><br><br>
+  
 
 <!-- banner -->
  <section class="main">
@@ -656,8 +654,14 @@ ul{
         <p> Your trusted choice for all your shopping needs.</p>
         <a href="./menu.html"><button>Shop now</button></a>
     </div>
-    <img src="./asset/ei_1717506491805-removebg-preview.png" alt="">
+    <img src="./asset/online-shopping-banner-with-cart-clouds-vector-42935752.jpg" alt="">
 </section>
+
+  <!-- side icon -->
+  <div class="side-icon">
+    <a href="./message.html"><i class="fa fa-message"></i></a>
+</div>
+
 
 
 <div class="explore">
@@ -727,7 +731,7 @@ ul{
                         </figcaption>
                 </div>
 
-                <div class="items">
+                <!-- <div class="items">
                     <img src="./asset/1 (57).jpg" alt="">
                     <figcaption>
                         <h2>Men Casual</h2>
@@ -735,7 +739,7 @@ ul{
                         </p>
                         </figcaption>
                 </div>
-               
+                -->
 
                 <div class="item">
                     <img src="./asset/1 (5).jpg" alt="">
@@ -852,74 +856,36 @@ ul{
     menu.classList.toggle("menuToggle");
 
  })
+
+     
+       
+            // draggable
+            var dragValue;
+            function move() {
+                var element=document.querySelector('.side-icon');
+                element.style.position="absolute";
+
+                element.onmousedown=function(){
+                    dragValue=element;
+                }
+            }
+
+            document.onmouseup=function(){
+                dragValue=null;
+            }
+            document.onmousemove=function (e) {
+                var x=e.pageX;
+                var y=e.pageY;
+
+                dragValue.style.left=x + "px";
+                dragValue.style.top=y + "px";
+            }
+
+
+        
  
 
-        // Cart Functionality
-        let cart = [];
-
-        // Function to add items to the cart
-        function addToCart(name, price) {
-            cart.push({name: name, price: price});
-            updateCartDisplay();
-        }
-
-        // Function to remove items from the cart
-        function removeFromCart(index) {
-            cart.splice(index, 1); // Remove item by index
-            updateCartDisplay();
-        }
-
-        // Function to update the cart display
-        function updateCartDisplay() {
-            const cartItemsContainer = document.getElementById('cartItems');
-            cartItemsContainer.innerHTML = ''; // Clear the current cart
-
-            let total = 0;
-
-            cart.forEach((item, index) => {
-                const cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `
-                    ${item.name} - GHS ${item.price} 
-                    <button class="remove-from-cart" onclick="removeFromCart(${index})">Remove</button>
-                `;
-                cartItemsContainer.appendChild(cartItem);
-                total += item.price;
-            });
-
-            document.querySelector('.cart-total').textContent = `Total: GHS ${total.toFixed(2)}`;
-        }
-
-        // Event listeners for all "Add to Cart" buttons
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const itemName = this.getAttribute('data-name');
-                const itemPrice = parseFloat(this.getAttribute('data-price'));
-
-                addToCart(itemName, itemPrice);
-            });
-        });
-
-        // Checkout Functionality
-        document.getElementById('checkoutButton').addEventListener('click', function() {
-            if (cart.length === 0) {
-                alert('Your cart is empty. Please add items before checking out.');
-            } else {
-                // Create order message
-                let orderMessage = 'New Order:\n';
-                cart.forEach(item => {
-                    orderMessage += `${item.name} - GHS ${item.price}\n`;
-                });
-                orderMessage += `Total: GHS ${cart.reduce((sum, item) => sum + item.price, 0).toFixed(2)}`;
-                
-                // Encode the message for URL
-                const encodedMessage = encodeURIComponent(orderMessage);
-                
-                // Redirect to WhatsApp with order message
-                window.location.href = `https://wa.me/233557398858?text=${encodedMessage}`; // Replace with your WhatsApp number
-            }
-        });
+        
     </script>
 </body>
 </html>
