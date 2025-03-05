@@ -73,7 +73,7 @@ alert("Please select a delivery mode.");
 ) {
 alert("Please complete all the required fields in the form.");
 } else {
-
+ 
     // calcilating the amount
     let price =localStorage.getItem('price');
     let quantity =localStorage.getItem('quantity');
@@ -81,7 +81,7 @@ alert("Please complete all the required fields in the form.");
 
     
     var handler = PaystackPop.setup({
-        key: 'pk_test_f205ea96eec55f5ba434a42223657c97ccbdf449', // Your Paystack public key
+        key: 'pk_live_41435e5fd7491015ebda5fbdcb38bce2d1593f69', // Your Paystack public key
         email: email, // Customer's email
         amount: amount, // Amount in kobo (₦100.00)
         currency: 'GHS', // Currency
